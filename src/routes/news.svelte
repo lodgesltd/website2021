@@ -19,6 +19,13 @@
   import Header from "../components/_shared/Header/Header.svelte";
   import Typography from "../components/_styles/Typography/Typography.svelte";
   import Container from "../components/_styles/Container/Container.svelte";
+  /* Import Swiper and SwiperSlide components from .svelte files */
+  import Swiper from "swiper/esm/svelte/swiper.svelte";
+  import SwiperSlide from "swiper/esm/svelte/swiper-slide.svelte";
+  // Import Swiper styles
+  import "swiper/swiper-bundle.min.css";
+  import SwiperCore, { Pagination, Navigation } from "swiper/core";
+  SwiperCore.use([Pagination, Navigation]);
 
   export let data;
   export let headerData;
@@ -61,12 +68,17 @@
           </div>
 
           <div class="news--inner">
-            {#if record.fields.images && record.fields.images.length >= 1}
-              <img
-                width="400"
-                src={record.fields.images[0].url}
-                alt="News images"
-              />
+            {#if record.fields.images && record.fields.images.length === 1}
+              <img src={record.fields.images[0].url} alt="News " />
+            {/if}
+            {#if record.fields.images && record.fields.images.length > 1}
+              <Swiper navigation={true} pagination={true}>
+                {#each record.fields.images as img}
+                  <SwiperSlide>
+                    <img src={img.url} alt="News" />
+                  </SwiperSlide>
+                {/each}
+              </Swiper>
             {/if}
           </div>
         </div>
@@ -89,7 +101,7 @@
     }
 
     &--content {
-      /* max-width: 691px; */
+      max-width: 691px;
       padding-right: 40px;
     }
 
@@ -97,10 +109,16 @@
       display: flex;
       flex-direction: column;
     }
+
     &--article {
       border-bottom: 1px solid $shade1;
-      padding: 80px 0;
+      padding: 80px 0 50px 0;
       display: flex;
+      flex-direction: column;
+
+      @include breakpoint(lg) {
+        flex-direction: row;
+      }
 
       &:first-child {
         padding-top: 0;
@@ -109,6 +127,26 @@
       &:last-child {
         padding-bottom: 0;
         border-bottom: none;
+      }
+    }
+
+    &--inner {
+      width: 100%;
+
+      @include breakpoint(md) {
+        width: 60%;
+      }
+
+      @include breakpoint(lg) {
+        width: 40%;
+      }
+    }
+    img {
+      padding-top: 40px;
+      width: 100%;
+
+      @include breakpoint(lg) {
+        padding-top: 0;
       }
     }
   }
