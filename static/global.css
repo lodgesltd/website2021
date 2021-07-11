@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;600;700&display=swap");
+
+:global(*) {
+  font-family: "Overpass", sans-serif;
+}
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Overpass", sans-serif;
+  color: #333;
+}

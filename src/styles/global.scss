@@ -1,0 +1,39 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #{$light};
+  --dark: #{$dark};
+  --brand1: #{$brand1};
+  --brand2: #{$brand2};
+  --feedback1: #{$feedback1};
+  --tint1: #{$tint1};
+  --tint2: #{$tint2};
+  --shade1: #{$shade1};
+  --shade2: #{$shade2};
+  --shade2solid: #{$shade2solid};
+  --shade3: #{$shade3};
+  --dark-vertical: #{$dark-vertical};
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}

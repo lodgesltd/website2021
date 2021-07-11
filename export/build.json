@@ -1,0 +1,81 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.5",
+  "assets": {
+    "main": "client.07d9ff60.js"
+  },
+  "css": {
+    "main": [
+      "client-98344634.css"
+    ]
+  },
+  "dependencies": {
+    "index.svelte": [
+      "index.4c0dffe0.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "index-96d00d62.css"
+    ],
+    "privacy-policy.svelte": [
+      "privacy-policy.854982e9.js",
+      "Header.e4e8837a.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "Header-25700ab7.css"
+    ],
+    "suggestions.svelte": [
+      "suggestions.955fb0a3.js",
+      "inject_styles.5607aec6.js"
+    ],
+    "disclaimer.svelte": [
+      "disclaimer.836669e9.js",
+      "Header.e4e8837a.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "Header-25700ab7.css"
+    ],
+    "committee.svelte": [
+      "committee.82e75545.js",
+      "Header.e4e8837a.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "Header-25700ab7.css",
+      "committee-7f638bc0.css"
+    ],
+    "minutes.svelte": [
+      "minutes.bbb3457c.js",
+      "Header.e4e8837a.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "Header-25700ab7.css",
+      "minutes-a2586e32.css"
+    ],
+    "blog/index.svelte": [
+      "index.b0c78db4.js",
+      "inject_styles.5607aec6.js",
+      "index-fb6614c0.css"
+    ],
+    "blog/[slug].svelte": [
+      "[slug].08b4f5bd.js",
+      "inject_styles.5607aec6.js",
+      "[slug]-f9500987.css"
+    ],
+    "news.svelte": [
+      "news.4c73e45f.js",
+      "Header.e4e8837a.js",
+      "Typography.90d2e9f8.js",
+      "inject_styles.5607aec6.js",
+      "Typography-057689dc.css",
+      "Header-25700ab7.css",
+      "news-2991d720.css"
+    ]
+  },
+  "legacy_assets": {
+    "main": "client.d03a26c5.js"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "ES2019", "WebWorker"],
+    "types": ["jest"],
+    "resolveJsonModule": true,
+    "module": "ESNext"
+  },
+  "include": ["src/**/*", "src/node_modules/**/*", "functions"],
+  "exclude": ["__sapper__/*", "static/*", "*.stories.js"]
+}
