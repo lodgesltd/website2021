@@ -38,17 +38,15 @@
 
 <Container>
   <div class="minutes">
+    <Typography variant="h3">Read the minutes from:</Typography>
     {#if minutesData}
-      {#each minutesData.records as minutes}
-        <div class="minutes--link">
-          <Typography>
-            Read the minutes from:
-            <a href={minutes.fields.link} target="_blank">
-              {minutes.fields.title}</a
-            >
-          </Typography>
-        </div>
-      {/each}
+      <div class="minutes--layout">
+        {#each minutesData.records as minutes}
+          <a class="minutes--link" href={minutes.fields.link} target="_blank">
+            {minutes.fields.title}</a
+          >
+        {/each}
+      </div>
     {/if}
   </div>
 </Container>
@@ -56,12 +54,23 @@
 <style lang="scss">
   .minutes {
     padding: 80px 0;
+    border-bottom: 1px solid $shade1;
 
+    &--layout {
+      display: flex;
+      flex-direction: column;
+    }
     &--link {
-      padding-bottom: 20px;
+      color: $brand1;
+      padding: 40px 0 20px;
+      width: max-content;
+
+      &:hover {
+        color: $dark;
+      }
 
       &:last-child {
-        padding-bottom: 0;
+        padding: 20px 0 0;
       }
     }
   }

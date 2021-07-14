@@ -3,15 +3,6 @@
   import Container from "../../_styles/Container/Container.svelte";
   import Typography from "../../_styles/Typography/Typography.svelte";
   export let homeData;
-  let showForm = false;
-  let loading = false;
-
-  const loaded = () => {
-    setTimeout(function () {
-      showForm = !showForm;
-      loading = false;
-    }, 1200);
-  };
 </script>
 
 <div class="home">
@@ -25,7 +16,7 @@
           <Typography variant="button1">Simon and Radley Lodges SW19</Typography
           >
         </div>
-        <img src="/assets/hom.jpg" alt="lodges" />
+        <img src="/assets/home.jpg" alt="lodges" />
       </div>
     </Container>
   </div>
@@ -37,36 +28,6 @@
         <Typography>{homeData.fields.content}</Typography>
       </div>
     </Container>
-  </div>
-
-  <div>
-    <Container>
-      <div class="about--content">
-        <button
-          on:click={() => {
-            loading = true;
-            loaded();
-          }}
-          ><Typography variant="h2">Register as a Resident</Typography></button
-        >
-      </div>
-    </Container>
-
-    {#if loading}
-      <Loader />
-    {/if}
-    {#if showForm}
-      <iframe
-        title="register"
-        class="airtable-embed"
-        src="https://airtable.com/embed/shrg1K7SdDGgms3O3?backgroundColor=cyan"
-        frameborder="0"
-        onmousewheel=""
-        width="100%"
-        height="680"
-        style="background: transparent; border: 1px solid #ccc;"
-      />
-    {/if}
   </div>
 </div>
 
@@ -88,7 +49,7 @@
 
   .home {
     &--container {
-      background-color: $brand1;
+      background-image: linear-gradient($brand1, $brand2);
     }
 
     &--hero {
@@ -130,21 +91,6 @@
       align-items: center;
       justify-content: center;
       padding-top: 80px;
-    }
-  }
-
-  button {
-    background-color: $brand1;
-    border: none;
-    padding: 20px;
-    border-radius: 5px;
-    color: $light;
-    cursor: pointer;
-    margin-bottom: 80px;
-
-    &:hover {
-      background-color: $shade1;
-      color: $brand1;
     }
   }
 </style>

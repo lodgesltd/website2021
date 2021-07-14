@@ -59,7 +59,11 @@
     font-weight: 300;
     padding: 0 1em;
     text-transform: uppercase;
+    z-index: 9;
     padding: 1rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 
   .nav-sm {

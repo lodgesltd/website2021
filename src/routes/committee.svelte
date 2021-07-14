@@ -1,39 +1,46 @@
+<script context="module" lang="ts">
+  export async function preload(page, session) {
+    const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID } = session;
+
+    const header = await this.fetch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/pages?api_key=${AIRTABLE_API_KEY}`,
+    );
+    const headerData = await header.json();
+
+    const res = await this.fetch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/committee?api_key=${AIRTABLE_API_KEY}`,
+    );
+    const data = await res.json();
+    return { data, headerData };
+  }
+</script>
+
 <script>
   import Header from "../components/_shared/Header/Header.svelte";
   import Container from "../components/_styles/Container/Container.svelte";
   import Typography from "../components/_styles/Typography/Typography.svelte";
 
-  let committee = [
-    {
-      name: "Diane S.",
-      bio: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quodincidunt",
-    },
-    {
-      name: "Patricia X.",
-      bio: "lorem",
-    },
-    {
-      name: "James G.",
-      bio: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      name: "Rob X.",
-      bio: "lorem",
-    },
-  ];
+  export let data;
+  export let headerData;
+
+  let committeeData =
+    data &&
+    data.records &&
+    data.records.map(r => r.fields).sort((a, b) => b.id - a.id);
+
+  let header = headerData.records.filter(
+    r => r.fields.section === "committee",
+  )[0];
 </script>
 
 <Header
   backgroundColor="#f3f3fa"
-  title="The Committee"
-  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quod
-incidunt, nesciunt molestiae veritatis sapiente suscipit? Sint quisquam
-officia sequi asperiores quasi dolor, enim aliquid esse quia repellendus ipsa
-in?orem"
+  title={header.fields.title}
+  description={header.fields.content}
 />
 <Container>
   <div class="wrapper">
-    {#each committee as member}
+    {#each committeeData as member (member)}
       <div class="committee">
         <div class="committee--name">
           <Typography variant="h3">{member.name}</Typography>
@@ -54,7 +61,7 @@ in?orem"
 
 <style lang="scss">
   .wrapper {
-    padding: 60px 0 40px 0;
+    padding: 80px 0;
     display: grid;
     grid-gap: 24px;
     grid-template-columns: 1fr;
@@ -69,17 +76,18 @@ in?orem"
   }
   .committee {
     padding: 40px;
-    /* max-width: 200px; */
-    border: 2px solid $shade1;
-    border-radius: 5px;
+    background-color: $light;
+    border: 6px double $brand2;
+    color: $dark;
 
-    &--name {
-      /* color: blue; */
-      padding-bottom: 20px;
+    &:hover {
+      background-color: $brand1;
+      color: $light;
+      border: 6px double $light;
     }
 
-    &--bio {
-      /* color: coral; */
+    &--name {
+      padding-bottom: 20px;
     }
   }
 </style>

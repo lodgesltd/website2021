@@ -30,6 +30,11 @@
   export let data;
   export let headerData;
 
+  let news =
+    data &&
+    data.records &&
+    data.records.map(r => r.fields).sort((a, b) => b.id - a.id);
+
   let header = headerData.records.filter(r => r.fields.section === "news")[0];
 </script>
 
@@ -46,34 +51,34 @@
 {/if}
 <div class="news">
   <Container>
-    {#each data.records as record}
-      {#if record && record.fields}
+    {#each news as news (news)}
+      {#if news}
         <div class="news--article">
           <div class="news--content-side">
-            {#if record.fields.title}
+            {#if news.title}
               <div class="news--title">
-                <Typography variant="h2">{record.fields.title}</Typography>
+                <Typography variant="h2">{news.title}</Typography>
               </div>
             {/if}
-            {#if record.fields.date}
+            {#if news.date}
               <div class="news--date">
-                <Typography variant="caption">{record.fields.date}</Typography>
+                <Typography variant="caption">{news.date}</Typography>
               </div>
             {/if}
-            {#if record.fields.content}
+            {#if news.content}
               <div class="news--content">
-                <Typography>{record.fields.content}</Typography>
+                <Typography>{@html news.content}</Typography>
               </div>
             {/if}
           </div>
 
           <div class="news--inner">
-            {#if record.fields.images && record.fields.images.length === 1}
-              <img src={record.fields.images[0].url} alt="News " />
+            {#if news.images && news.images.length === 1}
+              <img src={news.images[0].url} alt="News " />
             {/if}
-            {#if record.fields.images && record.fields.images.length > 1}
+            {#if news.images && news.images.length > 1}
               <Swiper navigation={true} pagination={true}>
-                {#each record.fields.images as img}
+                {#each news.images as img}
                   <SwiperSlide>
                     <img src={img.url} alt="News" />
                   </SwiperSlide>
@@ -90,6 +95,7 @@
 <style lang="scss">
   .news {
     padding: 80px 0;
+    border-bottom: 1px solid $shade1;
 
     &--title {
       padding-bottom: 6px;
@@ -144,6 +150,7 @@
     img {
       padding-top: 40px;
       width: 100%;
+      z-index: 1;
 
       @include breakpoint(lg) {
         padding-top: 0;
