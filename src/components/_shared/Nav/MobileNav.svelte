@@ -77,8 +77,8 @@
   }
 
   nav {
-    background-color: $brand1;
-    padding: 0 1em;
+    background-image: linear-gradient($brand1, $brand2);
+    padding: 40px 1em 0;
     text-transform: uppercase;
     position: absolute;
     top: 0;

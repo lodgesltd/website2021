@@ -23,7 +23,7 @@
 
 <style lang="scss">
   .wrapper {
-    background-color: $brand1;
+    background-image: linear-gradient($brand1, $brand2);
   }
 
   h3 {

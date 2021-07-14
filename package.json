@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy sapper export",
-    "export": "sapper export --legacy",
+    "export": "sapper export --legacy --entry / /news /committee /minutes",
     "start": "node __sapper__/build",
     "validate": "svelte-check --ignore src/node_modules/@sapper",
     "storybook": "start-storybook -p 6006",
