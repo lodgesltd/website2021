@@ -37,14 +37,16 @@
   <Loader />
 {/if}
 {#if showForm}
+  <script
+    src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
   <iframe
-    title="register"
-    class="airtable-embed"
-    src="https://airtable.com/embed/shrg1K7SdDGgms3O3?backgroundColor=cyan"
+    title="register as resident"
+    class="airtable-embed airtable-dynamic-height"
+    src="https://airtable.com/embed/shraad6vtCbnJ7Trj?backgroundColor=purple"
     frameborder="0"
     onmousewheel=""
     width="100%"
-    height="780"
+    height="910"
     style="background: transparent; border: 1px solid #ccc;"
   />
 {/if}

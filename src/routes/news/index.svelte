@@ -16,9 +16,9 @@
 </script>
 
 <script lang="ts">
-  import Header from "../components/_shared/Header/Header.svelte";
-  import Typography from "../components/_styles/Typography/Typography.svelte";
-  import Container from "../components/_styles/Container/Container.svelte";
+  import Header from "../../components/_shared/Header/Header.svelte";
+  import Typography from "../../components/_styles/Typography/Typography.svelte";
+  import Container from "../../components/_styles/Container/Container.svelte";
   /* Import Swiper and SwiperSlide components from .svelte files */
   import Swiper from "swiper/esm/svelte/swiper.svelte";
   import SwiperSlide from "swiper/esm/svelte/swiper-slide.svelte";

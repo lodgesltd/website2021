@@ -11,26 +11,30 @@
 </script>
 
 <script>
-  import Header from "../components/_shared/Header/Header.svelte";
-  import Container from "../components/_styles/Container/Container.svelte";
+  import Header from "../../components/_shared/Header/Header.svelte";
+  import Container from "../../components/_styles/Container/Container.svelte";
   export let data;
+
+  let disclaimerData = data.records.filter(
+    r => r.fields.section === "disclaimer",
+  )[0];
 </script>
 
 <svelte:head>
-  <title>Lodges Ltd - Privacy Policy</title>
+  <title>Lodges Ltd - Disclaimer</title>
 </svelte:head>
 
-{#if data && data.records[0].fields.section === "privacyPolicy"}
+{#if data && disclaimerData}
   <Header
     backgroundColor="#f3f3fa"
-    title={data.records[0].fields.title}
-    description={data.records[0].fields.content}
+    title={disclaimerData.fields.title}
+    description={disclaimerData.fields.content}
   />
 
-  {#if data.records[0].fields.footerContent}
+  {#if disclaimerData.fields.footerContent}
     <Container>
       <div class="wrapper">
-        {@html data.records[0].fields.footerContent}
+        {@html disclaimerData.fields.footerContent}
       </div>
     </Container>
   {/if}

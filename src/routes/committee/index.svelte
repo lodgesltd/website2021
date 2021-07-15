@@ -16,9 +16,9 @@
 </script>
 
 <script>
-  import Header from "../components/_shared/Header/Header.svelte";
-  import Container from "../components/_styles/Container/Container.svelte";
-  import Typography from "../components/_styles/Typography/Typography.svelte";
+  import Header from "../../components/_shared/Header/Header.svelte";
+  import Container from "../../components/_styles/Container/Container.svelte";
+  import Typography from "../../components/_styles/Typography/Typography.svelte";
 
   export let data;
   export let headerData;

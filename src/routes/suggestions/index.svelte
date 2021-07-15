@@ -1,5 +1,5 @@
 <script>
-  import Loader from "../components/_shared/Loader/Loader.svelte";
+  import Loader from "../../components/_shared/Loader/Loader.svelte";
 
   let showForm = false;
   let loading = true;
@@ -23,14 +23,16 @@
   </div>
 {/if}
 {#if showForm}
+  <script
+    src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
   <iframe
-    title="suggestions"
-    class="airtable-embed"
-    src="https://airtable.com/embed/shreUROkZROO3dsSK?backgroundColor=cyan"
+    title="suggestions box"
+    class="airtable-embed airtable-dynamic-height"
+    src="https://airtable.com/embed/shrfnBgVQpiEgxsGN?backgroundColor=purple"
     frameborder="0"
     onmousewheel=""
     width="100%"
-    height="910px"
+    height="851"
     style="background: transparent; border: 1px solid #ccc;"
   />
 {/if}
