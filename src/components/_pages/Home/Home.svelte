@@ -25,7 +25,7 @@
     <Container>
       <Typography variant="h1">{homeData.fields.title}</Typography>
       <div class="about--content">
-        <Typography>{homeData.fields.content}</Typography>
+        <Typography>{@html homeData.fields.content}</Typography>
       </div>
     </Container>
   </div>

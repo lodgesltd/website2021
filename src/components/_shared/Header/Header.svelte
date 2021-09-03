@@ -15,7 +15,7 @@
         <Typography variant="h1">{title}</Typography>
         {#if description}
           <p>
-            {description}
+            {@html description}
           </p>
         {/if}
       </div>

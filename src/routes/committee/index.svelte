@@ -79,11 +79,10 @@
     background-color: $light;
     border: 6px double $brand2;
     color: $dark;
+    transition: transform 0.2s;
 
     &:hover {
-      background-color: $brand1;
-      color: $light;
-      border: 6px double $light;
+      transform: scale(1.1);
     }
 
     &--name {

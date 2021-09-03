@@ -123,6 +123,7 @@
       flex-direction: column;
 
       @include breakpoint(lg) {
+        justify-content: space-between;
         flex-direction: row;
       }
 
