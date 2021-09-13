@@ -68,9 +68,7 @@
   }
 
   button {
-    /* background-color: $brand1; */
     background-image: linear-gradient($brand1, $brand2);
-
     border: none;
     padding: 20px;
     border-radius: 5px;

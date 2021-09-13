@@ -118,13 +118,6 @@
 
   [aria-current]::after {
     border-bottom: 2px solid $light;
-    /* position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: $light;
-    display: block;
-    bottom: 10px; */
   }
 
   a {
