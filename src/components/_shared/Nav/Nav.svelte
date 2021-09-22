@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: $light;
+    color: $brand2;
   }
 
   ul {
@@ -99,25 +99,25 @@
   }
 
   a {
-    color: $light;
+    color: $brand2;
   }
 
   .nav--item {
-    color: $light;
+    color: $brand2;
 
     &:hover {
-      border-bottom: 2px solid $light;
+      border-bottom: 2px solid $brand2;
     }
   }
 
   [aria-current] {
     position: relative;
     display: inline-block;
-    border-bottom: 2px solid $light;
+    border-bottom: 2px solid $brand2;
   }
 
   [aria-current]::after {
-    border-bottom: 2px solid $light;
+    border-bottom: 2px solid $brand2;
   }
 
   a {

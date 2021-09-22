@@ -99,10 +99,9 @@
     }
 
     &--month {
-      background: #b11;
-      background: linear-gradient(to bottom right, #d66 0%, #a00 100%);
+      background-color: $brand1;
       padding: 10px;
-      color: $light;
+      color: $brand2;
       text-transform: uppercase;
       font-weight: 900;
     }

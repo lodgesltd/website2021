@@ -76,9 +76,8 @@
   }
   .committee {
     padding: 40px;
-    background-color: $light;
     border: 6px double $brand2;
-    color: $dark;
+    color: $brand1;
     transition: transform 0.2s;
 
     &:hover {

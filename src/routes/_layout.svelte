@@ -68,16 +68,16 @@
   }
 
   button {
-    background-image: linear-gradient($brand1, $brand2);
+    background-color: $brand1;
     border: none;
     padding: 20px;
     border-radius: 5px;
-    color: $light;
+    color: $brand2;
     cursor: pointer;
     margin-bottom: 80px;
 
     &:hover {
-      background-color: $shade1;
+      background-color: $brand2;
       color: $brand1;
       background-image: none;
     }
