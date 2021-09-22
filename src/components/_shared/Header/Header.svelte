@@ -10,16 +10,16 @@
 
 {#if title}
   <div class="wrapper" {style}>
-    <Container>
-      <div class="header">
+    <div class="header">
+      <Container>
         <Typography variant="h1">{title}</Typography>
         {#if description}
           <p>
             {@html description}
           </p>
         {/if}
-      </div>
-    </Container>
+      </Container>
+    </div>
   </div>
 {/if}
 
@@ -31,6 +31,8 @@
     justify-content: center;
     text-align: center;
     padding: 34px;
+    color: $brand2;
+    background-color: $brand1;
 
     @include breakpoint(md) {
       padding: 84px;

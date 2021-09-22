@@ -35,7 +35,7 @@
   img {
     width: 80vw;
     margin-top: 40px;
-    border: 10px double $light;
+    border: 10px double $brand2;
 
     @include breakpoint(md) {
       margin-top: 0;
@@ -49,7 +49,7 @@
 
   .home {
     &--container {
-      background-image: linear-gradient($brand1, $brand2);
+      background-color: $brand1;
     }
 
     &--hero {
@@ -58,7 +58,7 @@
 
     &--inner {
       height: 80vh;
-      color: $light;
+      color: $brand2;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -85,6 +85,7 @@
     justify-content: center;
     padding: 80px 0;
     background-color: $shade1;
+    color: $brand2;
 
     &--content {
       display: flex;

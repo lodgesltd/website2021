@@ -99,7 +99,7 @@
 
     &--title {
       padding-bottom: 6px;
-      color: $brand1;
+      color: $brand2;
     }
 
     &--date {

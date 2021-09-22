@@ -28,9 +28,9 @@
       <Typography theme="light">#1C3988</Typography>
     </div>
     <div class="label">
-      <Typography>--brand2</Typography>
+      <Typography>--brand1</Typography>
     </div>
-    <div class="swatch brand2">
+    <div class="swatch brand1">
       <Typography theme="light">#594B1F</Typography>
     </div>
 
@@ -128,8 +128,8 @@
     background-color: $brand1;
     color: $light;
   }
-  .brand2 {
-    background-color: $brand2;
+  .brand1 {
+    background-color: $brand1;
     color: $light;
   }
   .feedback1 {

@@ -77,18 +77,18 @@
   }
 
   nav {
-    background-image: linear-gradient($brand1, $brand2);
+    background-image: linear-gradient($brand1, $brand1);
     padding: 40px 1em 0;
     text-transform: uppercase;
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
   }
 
   .nav {
-    color: $light;
+    color: $brand2;
     padding-bottom: 50px;
     height: 100vh;
   }
@@ -113,14 +113,14 @@
     position: absolute;
     content: "";
     height: 2px;
-    background-color: $light;
+    background-color: $brand2;
     display: block;
     bottom: 10px;
   }
 
   a {
     text-decoration: none;
-    color: $light;
+    color: $brand2;
     padding: 1em 3rem;
     display: block;
     width: max-content;

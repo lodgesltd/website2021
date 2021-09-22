@@ -23,7 +23,7 @@
 
 <style lang="scss">
   .wrapper {
-    background-image: linear-gradient($brand1, $brand2);
+    background-color: $brand1;
   }
 
   h3 {
@@ -31,7 +31,7 @@
   }
 
   footer {
-    color: $light;
+    color: $brand2;
     text-transform: uppercase;
     text-decoration: none;
     display: flex;
@@ -67,7 +67,7 @@
 
   a {
     text-decoration: underline;
-    color: white;
+    color: $brand2;
     padding-bottom: 10px;
   }
 </style>
