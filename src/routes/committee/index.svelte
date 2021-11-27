@@ -26,7 +26,7 @@
   let committeeData =
     data &&
     data.records &&
-    data.records.map(r => r.fields).sort((a, b) => b.id - a.id);
+    data.records.map(r => r.fields).sort((a, b) => a.Order - b.Order);
 
   let header = headerData.records.filter(
     r => r.fields.section === "committee",
